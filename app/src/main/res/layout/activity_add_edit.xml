@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="com.example.imovies.AddEditActivity.AddEditActivityClickHandler" />
+
+        <variable
+            name="movie"
+            type="com.example.imovies.model.Movie" />
+
+
+    </data>
+
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddEditActivity">
+
+        <TextView
+            android:id="@+id/movieNameTextView"
+            android:text="Name"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/movieNameEditText"
+            android:hint="Name"
+            android:text="@={movie.movieName}"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/movieDescTextView"
+            android:text="Description"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/movieDescEditText"
+            android:hint="Description"
+            android:text="@={movie.movieDesc}"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+        <Button
+            android:id="@+id/okButton"
+            android:text="Ok"
+            android:onClick="@{clickHandler::onOkButtonClicked}"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_marginTop="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</layout>
+
